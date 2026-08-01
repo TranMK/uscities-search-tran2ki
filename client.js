@@ -6,7 +6,7 @@ CityInput.addEventListener("keypress", function(event) {
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the button element with a click
-    document.getElementById("sendBtnElm").click();
+    document.getElementById("send-button").click();
   }
 });
 sendBtnElm.addEventListener('click', send);
