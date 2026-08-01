@@ -1,1 +1,25 @@
-<h1> USCities Search Mini Project - coming soon</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USCities Search Mini Project - Khoi Tran</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+<h1>USCities Search Mini Project - Khoi Tran</h1>
+<h3>By Khoi Tran</h3>
+<br>
+Chat message:  
+<input id="chat-message" type="text" autocomplete="off" placeholder="Type a message…" style="width:450px;" />  
+<button id="send-button">Send</button>
+<br>
+<!--new UI elements to be implemented-->
+<b>System status: </b><br>
+<div id="status" style="width:625px; height:75px; overflow-y:scroll;"></div>
+<b>Chat responses:</b><br>
+<div id="responses"></div>
+<script src="client.js"></script>
+</body>
+</html>
