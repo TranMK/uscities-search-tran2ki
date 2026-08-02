@@ -10,6 +10,20 @@ searchInput.addEventListener("keypress", function(event) {
     searchBtnElm.click();
   }
 });
+//Instant Ajax search - at least 2 characters before suggesting, and debounce ~300ms after the last keystroke
+var debounceTimer = null;
+searchInput.addEventListener("keyup", function(event){
+  if (event.key === 'Enter'){
+    clearTimeout(debounceTimer);
+    search();
+    searchInput.value = ''; //clear the field after an explicit Enter press
+    return;
+  }
+  clearTimeout(debounceTimer);
+  var query = searchInput.value.trim();
+  if (query.length < 2) return; // AC5: needs at least 2 characters before suggesting
+  debounceTimer = setTimeout(search, 300); //AC7: debounce ~300ms after the last keystroke
+})
 searchBtnElm.addEventListener('click', search);
 function send() {
     var message = searchInput.value.trim();
@@ -53,6 +67,9 @@ function displaySearch(data) {
 //AC9+10: Sanitize every field before rendered as HTML
 function data_sanitize(v) {
   return DOMPurify.sanitize(v ? String(v) : '');
+}
+function json2htmllist(data){
+  
 }
 function json2htmltable(data){
   if(!Array.isArray(data) || data.length === 0) return "No cities found."; //AC10+11
