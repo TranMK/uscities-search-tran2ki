@@ -1,4 +1,4 @@
-var searchInput = document.getElementById('search-prompt');
+var searchInput = document.getElementById('city-prompt');
 var searchBtnElm = document.getElementById('search-button');
 var responseElm = document.getElementById('responses');
 searchInput.addEventListener("keypress", function(event) {
