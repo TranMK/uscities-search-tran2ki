@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>USCities Search Mini Project - Khoi Tran</title>
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.4.11/purify.min.js" integrity="sha512-lBPWWUhZJjVB3av+jFeCwgle3o8VaQIQu867R9fZh4HlNdPl/9/jeGVayR4BEV635JFXnVecK52KIBEu7UH9Ug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
 </head>
 <body>
 
@@ -12,7 +13,8 @@
 <h3>By Khoi Tran</h3>
 <br>
 City prompt:  
-<input id="city-prompt" type="text" autocomplete="off" placeholder="Type a city…" style="width:450px;" />  
-<button id="send-button">Send</button>
+<input id="search-prompt" type="text" autocomplete="off" placeholder="Type a city…" style="width:450px;" />  
+<button id="search-button">Search</button>
+<div id="responses"></div>
 <script src="client.js"></script>
 <br>
