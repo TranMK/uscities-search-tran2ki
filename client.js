@@ -24,7 +24,10 @@ searchInput.addEventListener("keyup", function(event){
   if (query.length < 2) return; // AC5: needs at least 2 characters before suggesting
   debounceTimer = setTimeout(search, 300); //AC7: debounce ~300ms after the last keystroke
 })
-searchBtnElm.addEventListener('click', search);
+searchBtnElm.addEventListener('click', function(){
+  search();
+  searchInput.value = '';
+});
 function send() {
     var message = searchInput.value.trim();
     if (!message) return;   // AC-02.2: empty messages are ignored
@@ -37,7 +40,7 @@ async function search(){
   const query = searchInput.value.trim();
   if (!query) return; //AC9: emptyspace queries don't reach fetch
   console.log(`Debug>query: ${query}`); //UI test only
-  searchInput.value = ''; // AC-01.5: clear input after sending
+  //searchInput.value = ''; // AC-01.5: clear input after sending
   searchInput.focus();
   try {
     const response = await fetch(`${BASE_URL}/uscities-search/${encodeURIComponent(query)}`);
